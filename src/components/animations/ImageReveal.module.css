@@ -1,0 +1,13 @@
+.reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.curtain {
+  position: absolute;
+  inset: 0;
+  background: var(--color-charcoal);
+  transform-origin: bottom;
+  z-index: 2;
+  pointer-events: none;
+}

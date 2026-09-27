@@ -1,0 +1,27 @@
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 1rem + 3vw, 3rem);
+}
+
+.item {
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  /* Offset every other portrait for an editorial, staggered rhythm */
+  .portrait:nth-child(2) {
+    margin-top: 4rem;
+  }
+  .portrait:nth-child(3) {
+    margin-top: -3rem;
+  }
+  /* A landscape that follows two items spans full width for cinematic breaks */
+  .landscape:nth-child(4n + 1) {
+    grid-column: 1 / -1;
+  }
+}

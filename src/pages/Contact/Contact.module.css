@@ -1,0 +1,139 @@
+.hero {
+  padding: 10rem var(--container-pad) clamp(3rem, 2rem + 4vw, 5rem);
+  background: var(--color-ink);
+  color: var(--text-on-dark);
+}
+.eyebrow {
+  display: block;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+}
+.title {
+  font-size: var(--fs-h1);
+  line-height: 1.02;
+  color: var(--color-bone);
+  max-width: 16ch;
+}
+.lead {
+  margin-top: 2rem;
+  max-width: 52ch;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--text-on-dark-muted);
+}
+
+/* --- Main --- */
+.main {
+  padding-block: var(--section-y);
+  background: var(--color-bone);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 2rem + 5vw, 6rem);
+}
+.formWrap {
+  margin-top: 2.5rem;
+}
+
+/* --- Info --- */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--hairline-light);
+}
+.infoLabel {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+.infoLink,
+.infoText {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  color: var(--color-charcoal);
+}
+.infoLink svg,
+.infoText svg {
+  color: var(--color-terracotta);
+  flex-shrink: 0;
+}
+.infoLink {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.infoLink:hover {
+  color: var(--color-terracotta);
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+.socials a {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.socials a:hover {
+  color: var(--color-terracotta);
+}
+
+/* --- Map placeholder --- */
+.map {
+  margin-top: 0.5rem;
+}
+.mapInner {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 38px,
+      var(--hairline-light) 39px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 38px,
+      var(--hairline-light) 39px
+    ),
+    var(--color-sand);
+  color: var(--color-slate);
+}
+.mapPin {
+  color: var(--color-terracotta);
+}
+.mapCity {
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: start;
+  }
+}

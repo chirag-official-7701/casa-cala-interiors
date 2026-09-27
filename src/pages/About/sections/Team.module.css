@@ -1,0 +1,133 @@
+.section {
+  padding-block: var(--section-y);
+  background: var(--color-ink);
+  color: var(--text-on-dark);
+  overflow: hidden;
+}
+
+.head {
+  margin-bottom: clamp(3rem, 2rem + 4vw, 5.5rem);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 2rem + 5vw, 6rem);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  align-items: center;
+}
+
+.photo {
+  position: relative;
+}
+
+/* Fallback avatar when no photo is provided. */
+.placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  color: var(--color-clay);
+  background: radial-gradient(
+    130% 130% at 30% 20%,
+    rgba(236, 231, 221, 0.08),
+    rgba(12, 11, 10, 0.4) 65%
+  );
+  border: 1px solid var(--hairline-dark);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+  margin-bottom: 1rem;
+}
+.name {
+  font-size: var(--fs-h3);
+  color: var(--color-bone);
+  line-height: 1.05;
+}
+.role {
+  margin-top: 0.35rem;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+.badge {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-terracotta);
+  border-radius: 999px;
+  font-size: var(--fs-small);
+  color: var(--color-terracotta-soft);
+}
+
+.divider {
+  display: block;
+  height: 1px;
+  background: var(--hairline-dark);
+  margin: 1.5rem 0;
+}
+
+.bio {
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+.bio + .bio {
+  margin-top: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.social {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--hairline-dark);
+  border-radius: 50%;
+  color: var(--color-terracotta-soft);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+a.social:hover {
+  background: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+  .flipped .photo {
+    order: 2;
+  }
+  .flipped .card {
+    order: 1;
+  }
+}

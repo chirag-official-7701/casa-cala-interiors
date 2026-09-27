@@ -1,0 +1,61 @@
+.fab {
+  position: fixed;
+  left: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  bottom: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  z-index: var(--z-overlay);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.25rem 0.7rem 0.85rem;
+  border-radius: 999px;
+
+  background: #25d366;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+
+  box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.55);
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.fab:hover {
+  background: #1fb457;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -8px rgba(37, 211, 102, 0.65);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fab {
+    transition: none;
+  }
+  .fab:hover {
+    transform: none;
+  }
+}
+
+/* Collapse to a circular icon-only button on very small screens. */
+@media (max-width: 400px) {
+  .fab {
+    padding: 0.85rem;
+  }
+  .label {
+    display: none;
+  }
+}

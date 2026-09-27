@@ -1,0 +1,6 @@
+.tagline {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: rgba(236, 231, 221, 0.9);
+  max-width: 34ch;
+}

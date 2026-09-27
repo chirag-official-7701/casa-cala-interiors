@@ -1,0 +1,45 @@
+.section {
+  padding-block: var(--section-y);
+  background: var(--color-ink);
+  color: var(--text-on-dark);
+  overflow: hidden;
+}
+
+.head {
+  margin-bottom: clamp(2.5rem, 2rem + 4vw, 4.5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 1.5rem + 3vw, 3.5rem);
+  align-items: center;
+}
+
+.media {
+  position: relative;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.para {
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1.15fr 1fr;
+  }
+  /* Stagger the flanking images for editorial rhythm. */
+  .media:first-child {
+    margin-top: 3rem;
+  }
+  .media:last-child {
+    margin-bottom: 3rem;
+  }
+}

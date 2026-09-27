@@ -1,0 +1,166 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: rgba(236, 231, 221, 0.8);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.back:hover {
+  color: var(--color-terracotta);
+}
+
+/* --- Overview --- */
+.overview {
+  padding-block: var(--section-y);
+  background: var(--color-bone);
+}
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+.metaRail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-content: start;
+}
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.metaLabel {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+.metaValue {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  color: var(--color-charcoal);
+}
+.leadText {
+  font-size: var(--fs-h4);
+  font-family: var(--font-serif);
+  line-height: 1.5;
+  color: var(--color-charcoal);
+}
+
+/* --- Stats band --- */
+.statsBand {
+  padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  background: var(--color-charcoal);
+  color: var(--text-on-dark);
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1.5rem;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.statValue {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
+  color: var(--color-bone);
+}
+.statLabel {
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  color: var(--text-on-dark-muted);
+}
+
+/* --- Philosophy --- */
+.philosophy {
+  padding-block: var(--section-y);
+  background: var(--color-bone);
+}
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.philosophyText {
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+  color: var(--color-slate);
+  max-width: 52ch;
+}
+
+/* --- Gallery --- */
+.gallerySection {
+  padding-bottom: var(--section-y);
+  background: var(--color-bone);
+}
+.galleryLabel {
+  display: block;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 2.5rem;
+}
+
+/* --- Pager --- */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--hairline-light);
+  background: var(--color-sand);
+}
+.pagerLink {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(2rem, 1rem + 3vw, 4rem) var(--container-pad);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+.pagerLink:hover {
+  background: var(--color-linen);
+}
+.pagerNext {
+  align-items: flex-end;
+  text-align: right;
+  border-left: 1px solid var(--hairline-light);
+}
+.pagerDir {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+.pagerTitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  color: var(--color-charcoal);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.pagerLink:hover .pagerTitle {
+  color: var(--color-terracotta);
+}
+
+@media (min-width: 820px) {
+  .overviewGrid {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: clamp(3rem, 1rem + 5vw, 6rem);
+  }
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .philosophyGrid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(3rem, 1rem + 5vw, 6rem);
+    align-items: start;
+  }
+}

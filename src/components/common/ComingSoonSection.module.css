@@ -1,0 +1,127 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-block: 10rem 6rem;
+  background:
+    radial-gradient(
+      120% 90% at 70% 20%,
+      rgba(180, 95, 61, 0.14),
+      transparent 60%
+    ),
+    var(--color-ink);
+  color: var(--text-on-dark);
+}
+
+/* Aperture visual */
+.visual {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  width: min(70vh, 620px);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+.ring {
+  position: absolute;
+  border: 1px solid var(--hairline-dark);
+  border-radius: 50%;
+}
+.core {
+  position: absolute;
+  inset: 38%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--color-terracotta),
+    rgba(180, 95, 61, 0)
+  );
+  filter: blur(6px);
+  opacity: 0.5;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+  border: 1px solid var(--hairline-dark);
+  padding: 0.55rem 1rem;
+  margin-bottom: 2rem;
+}
+.pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  box-shadow: 0 0 0 0 rgba(180, 95, 61, 0.6);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(180, 95, 61, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(180, 95, 61, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(180, 95, 61, 0);
+  }
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-size: var(--fs-display);
+  line-height: 0.98;
+  color: var(--color-bone);
+  max-width: 14ch;
+}
+
+.message {
+  margin-top: 2rem;
+  max-width: 46ch;
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--text-on-dark-muted);
+}
+
+.themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  max-width: 40ch;
+}
+.themes li {
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  color: var(--text-on-dark);
+  border: 1px solid var(--hairline-dark);
+  padding: 0.5rem 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}

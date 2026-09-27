@@ -1,0 +1,12 @@
+.line {
+  display: block;
+  overflow: hidden;
+  /* padding compensates for descenders/serifs being clipped by overflow */
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.inner {
+  display: block;
+  will-change: transform;
+}

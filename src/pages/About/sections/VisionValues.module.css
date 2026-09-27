@@ -1,0 +1,79 @@
+.section {
+  padding-block: var(--section-y);
+  background: var(--color-sand);
+  overflow: hidden;
+}
+
+.head {
+  margin-bottom: clamp(2.5rem, 2rem + 4vw, 4.5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 2rem + 4vw, 5rem);
+}
+
+/* Accent-barred subheading, e.g. "Our Vision" / "Our Values". */
+.subhead {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  color: var(--text-on-light);
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-terracotta);
+  margin-bottom: 1.5rem;
+}
+
+.statement {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--color-slate);
+  max-width: 44ch;
+}
+.visionMedia {
+  margin-top: 2rem;
+}
+
+.intro {
+  color: var(--color-slate);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hairline-light);
+}
+.itemTitle {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+}
+.itemText {
+  color: var(--color-slate);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 7rem);
+  }
+  .list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 2.5rem;
+  }
+}

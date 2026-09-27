@@ -1,0 +1,52 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.root[data-active='true'] {
+  opacity: 1;
+}
+
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--color-terracotta);
+  transition: opacity 0.2s ease;
+}
+
+.ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid var(--color-terracotta);
+  transition:
+    width 0.3s var(--ease-out),
+    height 0.3s var(--ease-out),
+    margin 0.3s var(--ease-out),
+    background-color 0.3s var(--ease-out),
+    opacity 0.3s ease;
+}
+
+.root[data-hover='true'] .ring {
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;
+  background: var(--color-terracotta-tint);
+}
+.root[data-hover='true'] .dot {
+  opacity: 0;
+}

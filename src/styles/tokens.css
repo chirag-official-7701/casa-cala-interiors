@@ -1,0 +1,99 @@
+/* =========================================================================
+   MERIDIAN — Design Tokens
+   A single source of truth for color, type, spacing, motion and layout.
+   ========================================================================= */
+
+:root {
+  /* --- Neutral palette (warm, architectural) --- */
+  --color-bone: #f5f2ec; /* warm off-white — primary light bg */
+  --color-sand: #e7e0d5; /* soft beige — secondary light bg */
+  --color-linen: #ece7dd; /* between bone and sand */
+  --color-clay: #b6a897; /* muted taupe */
+  --color-stone: #8a8378; /* muted grey text on light */
+  --color-slate: #56524c; /* mid text */
+  --color-charcoal: #201e1b; /* warm charcoal — primary dark bg */
+  --color-ink: #131210; /* deep near-black */
+  --color-obsidian: #0c0b0a; /* darkest */
+
+  /* --- Accent (terracotta, used sparingly) --- */
+  --color-terracotta: #b45f3d;
+  --color-terracotta-soft: #c67a58;
+  --color-terracotta-tint: rgba(180, 95, 61, 0.12);
+
+  /* --- Semantic surfaces --- */
+  --surface-light: var(--color-bone);
+  --surface-light-alt: var(--color-sand);
+  --surface-dark: var(--color-ink);
+  --surface-dark-alt: var(--color-charcoal);
+
+  /* --- Text --- */
+  --text-on-light: var(--color-charcoal);
+  --text-on-light-muted: var(--color-slate);
+  --text-on-dark: #ece7dd;
+  --text-on-dark-muted: #a49c8f;
+
+  --hairline-light: rgba(32, 30, 27, 0.14);
+  --hairline-dark: rgba(236, 231, 221, 0.16);
+
+  /* --- Typography --- */
+  --font-serif: 'Fraunces', 'Times New Roman', serif;
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Fluid type scale (clamp: min, preferred, max) */
+  --fs-display: clamp(3rem, 1.2rem + 8.5vw, 9rem);
+  --fs-h1: clamp(2.4rem, 1.2rem + 5.2vw, 5.5rem);
+  --fs-h2: clamp(2rem, 1.2rem + 3.4vw, 3.75rem);
+  --fs-h3: clamp(1.5rem, 1.1rem + 1.7vw, 2.25rem);
+  --fs-h4: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+  --fs-lead: clamp(1.05rem, 0.98rem + 0.45vw, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.75rem;
+
+  --lh-tight: 1.02;
+  --lh-heading: 1.08;
+  --lh-body: 1.65;
+
+  --ls-eyebrow: 0.28em;
+  --ls-nav: 0.12em;
+  --ls-tight: -0.02em;
+
+  /* --- Spacing scale (8pt-ish) --- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --section-y: clamp(4.5rem, 3rem + 7vw, 11rem);
+
+  /* --- Layout --- */
+  --container-max: 1440px;
+  --container-narrow: 960px;
+  --container-pad: clamp(1.25rem, 0.5rem + 3.5vw, 5rem);
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* --- Elevation (used very sparingly) --- */
+  --shadow-soft: 0 24px 60px -30px rgba(19, 18, 16, 0.5);
+  --shadow-card: 0 30px 80px -40px rgba(19, 18, 16, 0.65);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.25s;
+  --dur-med: 0.5s;
+  --dur-slow: 0.9s;
+
+  /* --- Z-index scale --- */
+  --z-cursor: 9000;
+  --z-nav: 1000;
+  --z-menu: 1100;
+  --z-progress: 1200;
+  --z-overlay: 800;
+}

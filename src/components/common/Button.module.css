@@ -1,0 +1,114 @@
+.btn {
+  --btn-fg: var(--color-bone);
+  --btn-bg: var(--color-charcoal);
+  --btn-border: var(--color-charcoal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 1.05em 1.9em;
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+/* Sliding fill on hover */
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-terracotta);
+  transform: translateY(101%);
+  transition: transform var(--dur-med) var(--ease-out);
+  z-index: -1;
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: translateY(0);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  color: var(--color-bone);
+  border-color: var(--color-terracotta);
+}
+
+.label {
+  display: inline-block;
+}
+
+.arrow {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.btn:hover .arrow,
+.btn:focus-visible .arrow {
+  transform: translateX(4px);
+}
+
+/* --- Variants --- */
+.primary.light {
+  --btn-fg: var(--color-bone);
+  --btn-bg: var(--color-charcoal);
+  --btn-border: var(--color-charcoal);
+}
+
+.primary.dark {
+  --btn-fg: var(--color-charcoal);
+  --btn-bg: var(--color-bone);
+  --btn-border: var(--color-bone);
+}
+.primary.dark:hover,
+.primary.dark:focus-visible {
+  color: var(--color-bone);
+}
+
+.outline {
+  background: transparent;
+}
+.outline.light {
+  --btn-fg: var(--color-charcoal);
+  --btn-border: var(--hairline-light);
+}
+.outline.dark {
+  --btn-fg: var(--color-bone);
+  --btn-border: var(--hairline-dark);
+}
+
+.ghost {
+  padding-inline: 0;
+  background: transparent;
+  border-color: transparent;
+}
+.ghost::before {
+  display: none;
+}
+.ghost.light {
+  --btn-fg: var(--color-charcoal);
+}
+.ghost.dark {
+  --btn-fg: var(--color-bone);
+}
+.ghost:hover,
+.ghost:focus-visible {
+  color: var(--color-terracotta);
+  border-color: transparent;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
