@@ -1,7 +1,7 @@
 import { PageTransition } from '../../components/animations/PageTransition';
 import { Seo } from '../../components/common/Seo';
 import { PageHero } from '../../components/common/PageHero';
-import { ABOUT } from '../../data/about';
+import { ABOUT } from '../../content/about';
 import { Studio } from './sections/Studio';
 import { Philosophy } from './sections/Philosophy';
 import { VisionValues } from './sections/VisionValues';
@@ -17,7 +17,7 @@ export default function About() {
       <Seo
         title="About"
         path="/about"
-        description="Casa Kala is a Dubai-based interior design and turnkey studio — meet the studio, our philosophy, values and the team behind the work."
+        description="Casa Kala is an Agra-based interior design and turnkey studio — meet the studio, our philosophy, values and the team behind the work."
       />
 
       <PageHero

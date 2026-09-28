@@ -2,26 +2,25 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Container } from '../../../components/common/Container';
 import { SectionHeading } from '../../../components/common/SectionHeading';
 import { PROCESS_STEPS } from '../../../data/services';
+import { HOME } from '../../../content/home';
 import { EASE_OUT, viewportOnce } from '../../../constants/motion';
 import styles from './Process.module.css';
 
 export function Process() {
   const reduce = useReducedMotion();
+  const c = HOME.process;
 
   return (
     <section className={styles.section}>
       <Container>
         <div className={styles.head}>
           <SectionHeading
-            eyebrow="How We Work"
-            title={['A Considered', 'Process.']}
-            ghost="Process"
+            eyebrow={c.eyebrow}
+            title={[...c.title]}
+            ghost={c.ghost}
             tone="dark"
           />
-          <p className={styles.intro}>
-            Six deliberate stages take a project from first conversation to
-            final handover — each one protecting the design intent.
-          </p>
+          <p className={styles.intro}>{c.intro}</p>
         </div>
 
         <ol className={styles.steps}>

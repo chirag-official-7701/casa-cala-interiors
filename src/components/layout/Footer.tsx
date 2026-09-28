@@ -6,25 +6,26 @@ import { ScrollReveal } from '../animations/ScrollReveal';
 import { TextReveal } from '../animations/TextReveal';
 import { NAV_ITEMS } from '../../data/navigation';
 import { SITE, SOCIALS } from '../../constants/site';
+import { FOOTER } from '../../content/common';
 import styles from './Footer.module.css';
 
 export function Footer() {
-  const year = 2025;
+  const year = FOOTER.copyrightYear;
 
   return (
     <footer className={styles.footer}>
       <Container>
         {/* Closing statement */}
         <div className={styles.cta}>
-          <span className={styles.eyebrow}>Let’s begin</span>
+          <span className={styles.eyebrow}>{FOOTER.eyebrow}</span>
           <TextReveal
             as="p"
             className={styles.statement}
-            lines={['Let’s create something', 'extraordinary.']}
+            lines={[...FOOTER.statement]}
           />
           <ScrollReveal delay={0.15}>
             <Link to="/contact" className={styles.ctaLink}>
-              Start a Conversation
+              {FOOTER.ctaLabel}
               <ArrowUpRight size={28} strokeWidth={1.3} />
             </Link>
           </ScrollReveal>
@@ -37,7 +38,7 @@ export function Footer() {
           </div>
 
           <nav className={styles.col} aria-label="Footer">
-            <h2 className={styles.colTitle}>Explore</h2>
+            <h2 className={styles.colTitle}>{FOOTER.columns.explore}</h2>
             <ul>
               {NAV_ITEMS.map((item) => (
                 <li key={item.to}>
@@ -50,7 +51,7 @@ export function Footer() {
           </nav>
 
           <div className={styles.col}>
-            <h2 className={styles.colTitle}>Studio</h2>
+            <h2 className={styles.colTitle}>{FOOTER.columns.studio}</h2>
             <ul>
               <li>
                 <a href={`mailto:${SITE.email}`} className={styles.footLink}>
@@ -67,7 +68,7 @@ export function Footer() {
           </div>
 
           <div className={styles.col}>
-            <h2 className={styles.colTitle}>Follow</h2>
+            <h2 className={styles.colTitle}>{FOOTER.columns.follow}</h2>
             <ul>
               {SOCIALS.map((s) => (
                 <li key={s.label}>
@@ -90,7 +91,7 @@ export function Footer() {
           <p>
             © {year} {SITE.legalName}. All rights reserved.
           </p>
-          <p className={styles.credit}>Designed &amp; built with care.</p>
+          <p className={styles.credit}>{FOOTER.credit}</p>
         </div>
       </Container>
     </footer>

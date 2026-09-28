@@ -5,10 +5,12 @@ import { Button } from '../../../components/common/Button';
 import { TextReveal } from '../../../components/animations/TextReveal';
 import { Image } from '../../../components/common/Image';
 import { SITE } from '../../../constants/site';
+import { HOME } from '../../../content/home';
 import styles from './Hero.module.css';
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const c = HOME.hero;
 
   return (
     <section className={styles.hero} aria-label="Introduction">
@@ -21,8 +23,8 @@ export function Hero() {
           transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="1600585154340-be6161a56a0c"
-            alt="A light-filled contemporary interior with sculptural furniture"
+            src={c.image}
+            alt={c.imageAlt}
             ratio="auto"
             priority
             sizes="100vw"
@@ -39,14 +41,14 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Interior Architecture Studio · {SITE.locationShort}
+          {c.eyebrowLead} · {SITE.locationShort}
         </motion.span>
 
         <TextReveal
           as="h1"
           immediate
           className={styles.title}
-          lines={['Spaces Designed', 'to Inspire.']}
+          lines={[...c.title]}
         />
 
         <motion.p
@@ -55,8 +57,7 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.9 }}
         >
-          We create refined interiors where architecture, functionality and
-          timeless design come together.
+          {c.lead}
         </motion.p>
 
         <motion.div
@@ -65,11 +66,11 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 1.1 }}
         >
-          <Button to="/projects" tone="dark" withArrow>
-            Explore Projects
+          <Button to={c.primaryCta.to} tone="dark" withArrow>
+            {c.primaryCta.label}
           </Button>
-          <Button to="/contact" variant="outline" tone="dark">
-            Start a Conversation
+          <Button to={c.secondaryCta.to} variant="outline" tone="dark">
+            {c.secondaryCta.label}
           </Button>
         </motion.div>
       </div>
@@ -85,7 +86,7 @@ export function Hero() {
           className={styles.scrollLink}
           aria-label="Scroll to explore"
         >
-          <span>Scroll</span>
+          <span>{c.scrollLabel}</span>
           <motion.span
             className={styles.scrollIcon}
             animate={reduce ? undefined : { y: [0, 7, 0] }}

@@ -7,6 +7,7 @@ import { SectionHeading } from '../../../components/common/SectionHeading';
 import { Image } from '../../../components/common/Image';
 import { Button } from '../../../components/common/Button';
 import { SERVICES } from '../../../data/services';
+import { HOME } from '../../../content/home';
 import { ROUTES } from '../../../constants/routes';
 import styles from './ServicesPreview.module.css';
 
@@ -24,12 +25,12 @@ export function ServicesPreview() {
       <Container>
         <div className={styles.head}>
           <SectionHeading
-            eyebrow="What We Do"
-            title={['Services']}
+            eyebrow={HOME.services.eyebrow}
+            title={[...HOME.services.title]}
             tone="dark"
           />
           <Button to={ROUTES.services} variant="ghost" tone="dark" withArrow>
-            All Services
+            {HOME.services.ctaLabel}
           </Button>
         </div>
 

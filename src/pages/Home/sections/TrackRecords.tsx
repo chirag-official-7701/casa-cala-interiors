@@ -3,6 +3,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Container } from '../../../components/common/Container';
 import { SectionHeading } from '../../../components/common/SectionHeading';
 import { TRACK_RECORDS } from '../../../data/testimonials';
+import { HOME } from '../../../content/home';
 import { EASE_OUT } from '../../../constants/motion';
 import styles from './TrackRecords.module.css';
 
@@ -43,9 +44,9 @@ export function TrackRecords() {
     <section ref={ref} className={styles.section} aria-label="Our track record">
       <Container>
         <SectionHeading
-          eyebrow="By The Numbers"
-          title={['Track', 'Records']}
-          ghost="Records"
+          eyebrow={HOME.trackRecords.eyebrow}
+          title={[...HOME.trackRecords.title]}
+          ghost={HOME.trackRecords.ghost}
           tone="dark"
           align="center"
           className={styles.head}

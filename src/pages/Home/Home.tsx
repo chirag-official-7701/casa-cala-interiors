@@ -11,12 +11,14 @@ import { Process } from './sections/Process';
 import { Testimonials } from './sections/Testimonials';
 import { ServicesPreview } from './sections/ServicesPreview';
 import { PROJECTS } from '../../data/projects';
+import { HOME } from '../../content/home';
 import { ROUTES } from '../../constants/routes';
 import { SITE } from '../../constants/site';
 import styles from './Home.module.css';
 
 export default function Home() {
   const featured = PROJECTS.slice(0, 4);
+  const { featured: featuredCopy } = HOME;
 
   return (
     <PageTransition>
@@ -28,21 +30,18 @@ export default function Home() {
         <Container>
           <div className={styles.featuredHead}>
             <SectionHeading
-              eyebrow="Selected Work"
-              title={['Featured', 'Projects']}
-              ghost="Projects"
+              eyebrow={featuredCopy.eyebrow}
+              title={[...featuredCopy.title]}
+              ghost={featuredCopy.ghost}
             />
-            <p className={styles.featuredIntro}>
-              A selection of recent residential, commercial and hospitality
-              interiors — each a considered response to place and purpose.
-            </p>
+            <p className={styles.featuredIntro}>{featuredCopy.intro}</p>
           </div>
         </Container>
         <Container>
           <FeaturedProjects projects={featured} />
           <div className={styles.featuredCta}>
             <Button to={ROUTES.projects} withArrow>
-              View All Projects
+              {featuredCopy.ctaLabel}
             </Button>
           </div>
         </Container>

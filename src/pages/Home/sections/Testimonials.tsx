@@ -3,6 +3,7 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Container } from '../../../components/common/Container';
 import { SectionHeading } from '../../../components/common/SectionHeading';
 import { TESTIMONIALS } from '../../../data/testimonials';
+import { HOME } from '../../../content/home';
 import type { Testimonial } from '../../../types';
 import { cn } from '../../../utils/cn';
 import styles from './Testimonials.module.css';
@@ -94,9 +95,9 @@ export function Testimonials() {
     <section className={styles.section} aria-label="What our clients say">
       <Container>
         <SectionHeading
-          eyebrow="Kind Words"
-          title={['What Our', 'Clients Say']}
-          ghost="Clients"
+          eyebrow={HOME.testimonials.eyebrow}
+          title={[...HOME.testimonials.title]}
+          ghost={HOME.testimonials.ghost}
           align="center"
           className={styles.head}
         />

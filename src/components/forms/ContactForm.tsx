@@ -5,8 +5,11 @@ import type { ContactPayload, SubmitStatus } from '../../types';
 import { validateContact, type ContactErrors } from '../../utils/validation';
 import { submitContact } from '../../services/contact';
 import { PROJECT_TYPES, BUDGET_RANGES } from '../../constants/site';
+import { CONTACT } from '../../content/contact';
 import { cn } from '../../utils/cn';
 import styles from './ContactForm.module.css';
+
+const F = CONTACT.form;
 
 const EMPTY: ContactPayload = {
   name: '',
@@ -72,14 +75,14 @@ export function ContactForm() {
         <span className={styles.successIcon} aria-hidden="true">
           <Check size={28} strokeWidth={1.5} />
         </span>
-        <h3 className={styles.successTitle}>Message received.</h3>
+        <h3 className={styles.successTitle}>{F.success.title}</h3>
         <p className={styles.successText}>{serverMessage}</p>
         <button
           type="button"
           className={styles.reset}
           onClick={() => setStatus('idle')}
         >
-          Send another message
+          {F.success.reset}
         </button>
       </motion.div>
     );
@@ -90,7 +93,7 @@ export function ContactForm() {
       <div className={styles.row}>
         <Field
           id={fieldId('name')}
-          label="Name"
+          label={F.fields.name}
           required
           error={errors.name}
           errorId={errId('name')}
@@ -108,7 +111,7 @@ export function ContactForm() {
 
         <Field
           id={fieldId('email')}
-          label="Email"
+          label={F.fields.email}
           required
           error={errors.email}
           errorId={errId('email')}
@@ -128,7 +131,7 @@ export function ContactForm() {
       <div className={styles.row}>
         <Field
           id={fieldId('phone')}
-          label="Phone"
+          label={F.fields.phone}
           error={errors.phone}
           errorId={errId('phone')}
         >
@@ -145,7 +148,7 @@ export function ContactForm() {
 
         <Field
           id={fieldId('projectType')}
-          label="Project Type"
+          label={F.fields.projectType}
           required
           error={errors.projectType}
           errorId={errId('projectType')}
@@ -160,7 +163,7 @@ export function ContactForm() {
             }
           >
             <option value="" disabled>
-              Select…
+              {F.selectPlaceholder}
             </option>
             {PROJECT_TYPES.map((t) => (
               <option key={t} value={t}>
@@ -171,13 +174,13 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field id={fieldId('budget')} label="Budget Range">
+      <Field id={fieldId('budget')} label={F.fields.budget}>
         <select
           id={fieldId('budget')}
           value={values.budget}
           onChange={(e) => update('budget', e.target.value)}
         >
-          <option value="">Prefer not to say</option>
+          <option value="">{F.budgetDefault}</option>
           {BUDGET_RANGES.map((b) => (
             <option key={b} value={b}>
               {b}
@@ -188,7 +191,7 @@ export function ContactForm() {
 
       <Field
         id={fieldId('message')}
-        label="Message"
+        label={F.fields.message}
         required
         error={errors.message}
         errorId={errId('message')}
@@ -198,7 +201,7 @@ export function ContactForm() {
           rows={5}
           value={values.message}
           onChange={(e) => update('message', e.target.value)}
-          placeholder="Tell us about your space and ambitions…"
+          placeholder={F.messagePlaceholder}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? errId('message') : undefined}
         />
@@ -213,10 +216,10 @@ export function ContactForm() {
           {status === 'submitting' ? (
             <>
               <Loader2 size={17} className={styles.spin} aria-hidden="true" />
-              Sending…
+              {F.submitting}
             </>
           ) : (
-            'Start a Conversation'
+            F.submit
           )}
         </button>
 

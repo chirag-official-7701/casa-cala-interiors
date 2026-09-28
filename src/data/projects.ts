@@ -21,11 +21,11 @@ export const PROJECTS: Project[] = [
     id: 'p-grand-palazzo-villa',
     slug: 'grand-palazzo-villa',
     title: 'Grand Palazzo Villa',
-    location: 'Emirates Hills, Dubai',
+    location: 'Sushant Golf City, Lucknow',
     category: 'Residential',
     year: 2024,
     excerpt:
-      'A grand family villa where classical proportion meets contemporary Gulf glamour.',
+      'A grand family villa where classical proportion meets contemporary Indian glamour.',
     description:
       'The Grand Palazzo Villa is a full-scale residence conceived around a double-height arrival hall and a sweeping marble staircase. Book-matched stone, gilded detailing and bespoke joinery give the formal salons a sense of occasion, while carefully layered lighting keeps the scale intimate after dark. Every principal room was composed as a set piece — grand enough to host, warm enough to live in.',
     philosophy:
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     id: 'p-noir-dining-lounge',
     slug: 'noir-dining-lounge',
     title: 'Noir Dining Lounge',
-    location: 'DIFC, Dubai',
+    location: 'Connaught Place, New Delhi',
     category: 'Hospitality',
     year: 2023,
     excerpt:
@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     id: 'p-verde-aesthetics-clinic',
     slug: 'verde-aesthetics-clinic',
     title: 'Verde Aesthetics Clinic',
-    location: 'Jumeirah, Dubai',
+    location: 'Civil Lines, Agra',
     category: 'Commercial',
     year: 2024,
     excerpt:
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
     id: 'p-serene-curves-residence',
     slug: 'serene-curves-residence',
     title: 'Serene Curves Residence',
-    location: 'Jumeirah Golf Estates, Dubai',
+    location: 'Sector 150, Noida',
     category: 'Residential',
     year: 2024,
     excerpt:
@@ -137,7 +137,7 @@ export const PROJECTS: Project[] = [
     id: 'p-the-quiet-apartment',
     slug: 'the-quiet-apartment',
     title: 'The Quiet Apartment',
-    location: 'Business Bay, Dubai',
+    location: 'Bandra West, Mumbai',
     category: 'Residential',
     year: 2023,
     excerpt:
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
     id: 'p-cantilever-house',
     slug: 'cantilever-house',
     title: 'Cantilever House',
-    location: 'Al Barari, Dubai',
+    location: 'DLF Phase 5, Gurugram',
     category: 'Residential',
     year: 2024,
     excerpt:
@@ -195,7 +195,7 @@ export const PROJECTS: Project[] = [
     id: 'p-courtyard-house',
     slug: 'courtyard-house',
     title: 'Courtyard House',
-    location: 'Tilal Al Ghaf, Dubai',
+    location: 'Civil Lines, Jaipur',
     category: 'Residential',
     year: 2023,
     excerpt:
@@ -224,7 +224,7 @@ export const PROJECTS: Project[] = [
     id: 'p-lumiere-beauty-salon',
     slug: 'lumiere-beauty-salon',
     title: 'Lumière Beauty Salon',
-    location: 'Al Wasl, Dubai',
+    location: 'Hazratganj, Lucknow',
     category: 'Commercial',
     year: 2023,
     excerpt:
@@ -253,7 +253,7 @@ export const PROJECTS: Project[] = [
     id: 'p-blush-beauty-lounge',
     slug: 'blush-beauty-lounge',
     title: 'Blush Beauty Lounge',
-    location: 'City Walk, Dubai',
+    location: 'Khan Market, New Delhi',
     category: 'Commercial',
     year: 2024,
     excerpt:
@@ -282,7 +282,7 @@ export const PROJECTS: Project[] = [
     id: 'p-timber-house-cafe',
     slug: 'timber-house-cafe',
     title: 'Timber House Café',
-    location: 'Alserkal Avenue, Dubai',
+    location: 'Hauz Khas, New Delhi',
     category: 'Hospitality',
     year: 2022,
     excerpt:
@@ -311,7 +311,7 @@ export const PROJECTS: Project[] = [
     id: 'p-the-dressing-suite',
     slug: 'the-dressing-suite',
     title: 'The Dressing Suite',
-    location: 'Palm Jumeirah, Dubai',
+    location: 'Fatehabad Road, Agra',
     category: 'Residential',
     year: 2024,
     excerpt:
@@ -340,7 +340,7 @@ export const PROJECTS: Project[] = [
     id: 'p-classic-bedroom-suites',
     slug: 'classic-bedroom-suites',
     title: 'Classic Bedroom Suites',
-    location: 'Al Furjan, Dubai',
+    location: 'Indirapuram, Ghaziabad',
     category: 'Residential',
     year: 2023,
     excerpt:

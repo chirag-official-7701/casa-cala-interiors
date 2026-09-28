@@ -6,26 +6,20 @@ import { SectionHeading } from '../../components/common/SectionHeading';
 import { ScrollReveal } from '../../components/animations/ScrollReveal';
 import { ContactForm } from '../../components/forms/ContactForm';
 import { SITE, SOCIALS } from '../../constants/site';
+import { CONTACT } from '../../content/contact';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const { seo, hero, form, info } = CONTACT;
   return (
     <PageTransition>
-      <Seo
-        title="Contact"
-        path="/contact"
-        description="Start a conversation with Casa Kala. Tell us about your space and ambitions and our studio will be in touch."
-      />
+      <Seo title={seo.title} path="/contact" description={seo.description} />
 
       <section className={styles.hero}>
         <Container>
-          <span className={styles.eyebrow}>Get in Touch</span>
-          <h1 className={styles.title}>Let’s start a conversation.</h1>
-          <p className={styles.lead}>
-            Whether you are planning a new home, a workplace or a hospitality
-            space, we would love to hear about it. Share a few details and one
-            of our team will be in touch.
-          </p>
+          <span className={styles.eyebrow}>{hero.eyebrow}</span>
+          <h1 className={styles.title}>{hero.title}</h1>
+          <p className={styles.lead}>{hero.lead}</p>
         </Container>
       </section>
 
@@ -33,10 +27,7 @@ export default function Contact() {
         <Container>
           <div className={styles.grid}>
             <div className={styles.formCol}>
-              <SectionHeading
-                eyebrow="Enquiry"
-                title={['Tell us about', 'your project']}
-              />
+              <SectionHeading eyebrow={form.eyebrow} title={[...form.title]} />
               <div className={styles.formWrap}>
                 <ContactForm />
               </div>
@@ -47,28 +38,28 @@ export default function Contact() {
               aria-label="Studio contact details"
             >
               <div className={styles.infoBlock}>
-                <span className={styles.infoLabel}>Email us</span>
+                <span className={styles.infoLabel}>{info.emailLabel}</span>
                 <a href={`mailto:${SITE.email}`} className={styles.infoLink}>
                   <Mail size={16} strokeWidth={1.5} aria-hidden="true" />
                   {SITE.email}
                 </a>
               </div>
               <div className={styles.infoBlock}>
-                <span className={styles.infoLabel}>Call us</span>
+                <span className={styles.infoLabel}>{info.callLabel}</span>
                 <a href={SITE.phoneHref} className={styles.infoLink}>
                   <Phone size={16} strokeWidth={1.5} aria-hidden="true" />
                   {SITE.phone}
                 </a>
               </div>
               <div className={styles.infoBlock}>
-                <span className={styles.infoLabel}>Visit us</span>
+                <span className={styles.infoLabel}>{info.visitLabel}</span>
                 <p className={styles.infoText}>
                   <MapPin size={16} strokeWidth={1.5} aria-hidden="true" />
                   {SITE.location}
                 </p>
               </div>
               <div className={styles.infoBlock}>
-                <span className={styles.infoLabel}>Follow</span>
+                <span className={styles.infoLabel}>{info.followLabel}</span>
                 <ul className={styles.socials}>
                   {SOCIALS.map((s) => (
                     <li key={s.label}>

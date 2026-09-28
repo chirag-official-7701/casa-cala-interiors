@@ -20,6 +20,10 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Page tops (hero) and the footer are both dark — match the overscroll
+     "rubber-band" gutter to them (obsidian = the footer colour) so it never
+     flashes white at the top or bottom edges. */
+  background-color: var(--color-obsidian);
 }
 
 @media (prefers-reduced-motion: reduce) {

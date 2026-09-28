@@ -1,26 +1,21 @@
 import { PageTransition } from '../../components/animations/PageTransition';
 import { Seo } from '../../components/common/Seo';
 import { ComingSoonSection } from '../../components/common/ComingSoonSection';
+import { INNOVATION } from '../../content/innovation';
 
 export default function Innovation() {
   return (
     <PageTransition>
       <Seo
-        title="Innovation"
+        title={INNOVATION.seo.title}
         path="/innovation"
-        description="Casa Kala is exploring the future of living — smart spaces, sustainable materials and design-led technology."
+        description={INNOVATION.seo.description}
       />
       <ComingSoonSection
-        eyebrow="Innovation"
-        title={['Designing', 'What’s Next.']}
-        message="We are exploring the future of living — where smart spaces, sustainable materials and design-led technology come together to shape how we will inhabit our environments tomorrow."
-        themes={[
-          'Smart Spaces',
-          'Sustainable Materials',
-          'Future Living',
-          'Design Technology',
-          'Wellbeing',
-        ]}
+        eyebrow={INNOVATION.eyebrow}
+        title={[...INNOVATION.title]}
+        message={INNOVATION.message}
+        themes={[...INNOVATION.themes]}
       />
     </PageTransition>
   );

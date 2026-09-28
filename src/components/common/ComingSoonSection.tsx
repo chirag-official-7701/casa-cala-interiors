@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { TextReveal } from '../animations/TextReveal';
 import { ScrollReveal } from '../animations/ScrollReveal';
 import { EASE_OUT } from '../../constants/motion';
+import { COMING_SOON } from '../../content/common';
 import styles from './ComingSoonSection.module.css';
 
 interface ComingSoonSectionProps {
@@ -61,7 +62,7 @@ export function ComingSoonSection({
       <Container className={styles.inner}>
         <span className={styles.status}>
           <span className={styles.pulse} aria-hidden="true" />
-          Coming Soon
+          {COMING_SOON.status}
         </span>
         <span className={styles.eyebrow}>{eyebrow}</span>
         <TextReveal as="h1" lines={title} immediate className={styles.title} />
@@ -80,11 +81,11 @@ export function ComingSoonSection({
         )}
 
         <ScrollReveal delay={0.3} className={styles.actions}>
-          <Button to="/contact" tone="dark" withArrow>
-            Register Your Interest
+          <Button to={COMING_SOON.primaryCta.to} tone="dark" withArrow>
+            {COMING_SOON.primaryCta.label}
           </Button>
-          <Button to="/projects" variant="ghost" tone="dark">
-            Explore Our Work
+          <Button to={COMING_SOON.secondaryCta.to} variant="ghost" tone="dark">
+            {COMING_SOON.secondaryCta.label}
           </Button>
         </ScrollReveal>
       </Container>

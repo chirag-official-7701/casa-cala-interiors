@@ -9,6 +9,7 @@ import { SectionHeading } from '../../components/common/SectionHeading';
 import { ProjectGallery } from '../../components/projects/ProjectGallery';
 import { ProjectNotFound } from './ProjectNotFound';
 import { getProjectBySlug, getAdjacentProjects } from '../../data/projects';
+import { PROJECT_DETAIL } from '../../content/projectDetails';
 import { ROUTES } from '../../constants/routes';
 import { buildImageUrl } from '../../utils/image';
 import styles from './ProjectDetails.module.css';
@@ -41,7 +42,7 @@ export default function ProjectDetails() {
       >
         <Link to={ROUTES.projects} className={styles.back}>
           <ArrowLeft size={16} strokeWidth={1.5} />
-          All Projects
+          {PROJECT_DETAIL.backLabel}
         </Link>
       </PageHero>
 
@@ -50,9 +51,18 @@ export default function ProjectDetails() {
         <Container>
           <div className={styles.overviewGrid}>
             <dl className={styles.metaRail} aria-label="Project details">
-              <Meta label="Location" value={project.location} />
-              <Meta label="Year" value={String(project.year)} />
-              <Meta label="Category" value={project.category} />
+              <Meta
+                label={PROJECT_DETAIL.meta.location}
+                value={project.location}
+              />
+              <Meta
+                label={PROJECT_DETAIL.meta.year}
+                value={String(project.year)}
+              />
+              <Meta
+                label={PROJECT_DETAIL.meta.category}
+                value={project.category}
+              />
             </dl>
             <div className={styles.lead}>
               <ScrollReveal>
@@ -87,8 +97,8 @@ export default function ProjectDetails() {
         <Container>
           <div className={styles.philosophyGrid}>
             <SectionHeading
-              eyebrow="Design Philosophy"
-              title={['The Approach']}
+              eyebrow={PROJECT_DETAIL.philosophyEyebrow}
+              title={[...PROJECT_DETAIL.philosophyTitle]}
             />
             <ScrollReveal delay={0.1}>
               <p className={styles.philosophyText}>{project.philosophy}</p>
@@ -100,7 +110,9 @@ export default function ProjectDetails() {
       {/* Gallery */}
       <section className={styles.gallerySection}>
         <Container>
-          <span className={styles.galleryLabel}>Gallery</span>
+          <span className={styles.galleryLabel}>
+            {PROJECT_DETAIL.galleryLabel}
+          </span>
           <ProjectGallery images={project.gallery} />
         </Container>
       </section>
@@ -114,7 +126,7 @@ export default function ProjectDetails() {
           >
             <span className={styles.pagerDir}>
               <ArrowLeft size={16} strokeWidth={1.5} />
-              Previous
+              {PROJECT_DETAIL.pager.prev}
             </span>
             <span className={styles.pagerTitle}>{adjacent.prev.title}</span>
           </Link>
@@ -123,7 +135,7 @@ export default function ProjectDetails() {
             className={`${styles.pagerLink} ${styles.pagerNext}`}
           >
             <span className={styles.pagerDir}>
-              Next
+              {PROJECT_DETAIL.pager.next}
               <ArrowRight size={16} strokeWidth={1.5} />
             </span>
             <span className={styles.pagerTitle}>{adjacent.next.title}</span>

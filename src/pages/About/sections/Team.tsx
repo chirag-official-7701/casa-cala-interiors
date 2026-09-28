@@ -3,8 +3,8 @@ import { Container } from '../../../components/common/Container';
 import { SectionHeading } from '../../../components/common/SectionHeading';
 import { ScrollReveal } from '../../../components/animations/ScrollReveal';
 import { ImageReveal } from '../../../components/animations/ImageReveal';
-import { ABOUT } from '../../../data/about';
-import type { AboutTeamMember } from '../../../data/about';
+import { ABOUT } from '../../../content/about';
+import type { AboutTeamMember } from '../../../content/about';
 import { cn } from '../../../utils/cn';
 import styles from './Team.module.css';
 

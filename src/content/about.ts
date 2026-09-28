@@ -97,7 +97,7 @@ export const ABOUT: AboutContent = {
     eyebrow: 'Who We Are',
     title: ['The Studio'],
     ghost: 'Studio',
-    lead: 'Casa Kala is a Dubai-based interior design and turnkey studio crafting refined residential, commercial and hospitality spaces.',
+    lead: 'Casa Kala is an Agra-based interior design and turnkey studio crafting refined residential, commercial and hospitality spaces across India.',
     body: [
       'From first concept to final handover, we design and deliver in-house — interiors, joinery, landscaping and project management under one roof. We produce photoreal 3D visuals so you can experience a space before a single wall is built, then bring it to life with the same team that imagined it.',
       'We are deliberately selective about the work we take on, capping the number of live projects at any one time so every space receives the attention, craft and standard it deserves.',
@@ -140,7 +140,7 @@ export const ABOUT: AboutContent = {
     eyebrow: 'Our Vision',
     ghost: 'Vision & Values',
     statement:
-      'To help our clients shape spaces that reflect who they are — and to become the studio the region trusts first for thoughtful, enduring interiors.',
+      'To help our clients shape spaces that reflect who they are — and to become the studio India trusts first for thoughtful, enduring interiors.',
     image: '/images/projects/verde-aesthetics-clinic/1.jpg',
     imageAlt: 'Designers reviewing material samples over a workspace',
   },
@@ -191,7 +191,7 @@ export const ABOUT: AboutContent = {
         credentials: ['15+ Yrs Exp', 'Interior Architecture'],
         bio: [
           'As Founder & Creative Director, they set the design direction of the studio and safeguard its standard — pairing a strong creative vision with disciplined, hands-on delivery.',
-          'Under their leadership, Casa Kala has designed and delivered turnkey residential, hospitality and commercial spaces across the UAE, each reflecting the studio’s commitment to craft and considered detail.',
+          'Under their leadership, Casa Kala has designed and delivered turnkey residential, hospitality and commercial spaces across India, each reflecting the studio’s commitment to craft and considered detail.',
         ],
         image: '',
         linkedin: 'https://linkedin.com',
